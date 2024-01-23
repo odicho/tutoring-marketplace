@@ -1,0 +1,30 @@
+{
+  "name": "@repo/auth",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/lucia.ts",
+    "./arctic": "./src/arctic.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": ["./src/lucia.ts"],
+      "arctic": ["./src/arctic.ts"]
+    }
+  },
+  "scripts": {
+    "lint": "bunx @biomejs/biome lint ./src",
+    "lint:fix": "bunx @biomejs/biome lint --apply ./src",
+    "format": "bunx @biomejs/biome format ./src",
+    "format:fix": "bunx @biomejs/biome format --write ./src"
+  },
+  "dependencies": {
+    "@lucia-auth/adapter-drizzle": "^1.0.0-beta.7",
+    "arctic": "^0.10.5",
+    "lucia": "3.0.0-beta.15"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "typescript": "^5.3.3"
+  }
+}
